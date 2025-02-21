@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordcount-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: wordcount-app
+  template:
+    metadata:
+      labels:
+        app: wordcount-app
+    spec:
+      containers:
+      - name: wordcount-container
+        image: wordcount-app:latest
+        imagePullPolicy: Never
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+        ports:
+        - containerPort: 5000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: wordcount-service
+spec:
+  selector:
+    app: wordcount-app
+  ports:
+    - protocol: TCP
+      port: 80 # Porta exposta pelo serviço Kubernetes
+      targetPort: 5000 # Porta no container
+  type: NodePort # Permite acesso externo ao serviço (para testes)
+
