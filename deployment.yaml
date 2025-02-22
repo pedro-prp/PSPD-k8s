@@ -36,7 +36,7 @@ spec:
     app: wordcount-app
   ports:
     - protocol: TCP
-      port: 80 # Porta exposta pelo serviço Kubernetes
-      targetPort: 5000 # Porta no container
-  type: NodePort # Permite acesso externo ao serviço (para testes)
+      port: 80
+      targetPort: 5000
+  type: NodePort
 

@@ -1,10 +1,13 @@
-# **Relatório Final - Cenário 1: Kubernetes Isolado**
+# **Projeto Final - Kubernetes**
 
 ## **Dados do Curso**
 - **Curso:** Engenharia de Software  
 - **Disciplina:** PSPD (Programação para Sistemas Paralelos e Distribuídos)  
 - **Professor:** Fernando W. Cruz  
-- **Grupo:** [Nomes dos Integrantes]
+- **Integrantes:** 
+  - **Gabriel Luiz de Souza Gomes** - 190013354  
+  - **Pedro Rodrigues Pereira** - 170062686
+  - **Mateus Cunha Maia** - 180106805
 
 ---
 

@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spark-driver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spark-driver
+  template:
+    metadata:
+      labels:
+        app: spark-driver
+    spec:
+      serviceAccountName: spark
+      containers:
+      - name: spark-driver
+        image: spark-wordcount:latest
+        imagePullPolicy: Never
+        command: ["/opt/spark/bin/spark-submit"]
+        args:
+          - "--master"
+          - "k8s://https://kubernetes.default.svc"
+          - "--deploy-mode"
+          - "cluster"
+          - "/opt/spark/work-dir/app.py"
+        resources:
+          limits:
+            cpu: "1"
+            memory: "1Gi"

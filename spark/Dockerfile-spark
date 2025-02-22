@@ -1,0 +1,6 @@
+FROM apache/spark:3.5.4
+
+COPY app-spark.py /opt/spark/work-dir/app.py
+USER root
+RUN chmod +x /opt/spark/work-dir/app.py
+USER 185
