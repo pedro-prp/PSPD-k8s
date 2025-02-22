@@ -11,6 +11,9 @@
 
 ---
 
+## **Repositório**
+O repositório do projeto está disponível em: [https://github.com/pedro-prp/PSPD-k8s]
+
 ## **1. Introdução**
 Este relatório apresenta os resultados obtidos durante a execução do projeto final da disciplina PSPD. O objetivo principal foi testar as capacidades de performance e tolerância a falhas do Kubernetes, utilizando um cluster configurado com 1 nó mestre e 2 nós workers. Além disso, foram realizados experimentos controlados para monitorar o comportamento do cluster e da aplicação "Wordcount" em condições adversas.
 
